@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../navigation_bar.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Instellingen extends StatefulWidget {
+  const Instellingen({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Instellingen> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Instellingen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +19,9 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: const Text(
-          "Hello world!",
-          style: TextStyle(fontSize: 24),
-        ),
-        bottomNavigationBar: BottomNavigation(),
-      );
+        "settings",
+        style: TextStyle(fontSize: 24),
+      ),
+    );
   }
 }
