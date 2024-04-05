@@ -18,9 +18,11 @@ class _HomeState extends State<Verzameling> {
           style: TextStyle(fontSize: 16.0),
         ),
       ),
-      body: const Text(
-        "Verzameling",
-        style: TextStyle(fontSize: 24),
+      body: const SingleChildScrollView(
+        child: Text(
+          " Hello world!",
+          style: TextStyle(fontSize: 24),
+        ),
       ),
     );
   }
