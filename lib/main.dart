@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './screens/test.dart';
+import 'screens/home.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
