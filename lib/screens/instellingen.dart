@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../navigation_bar.dart';
 
 class Instellingen extends StatefulWidget {
   const Instellingen({super.key});

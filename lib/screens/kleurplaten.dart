@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../navigation_bar.dart';
 
 class Kleurplaten extends StatefulWidget {
   const Kleurplaten({super.key});

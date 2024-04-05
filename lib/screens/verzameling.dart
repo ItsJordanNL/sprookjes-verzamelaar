@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../navigation_bar.dart';
 
 class Verzameling extends StatefulWidget {
   const Verzameling({super.key});

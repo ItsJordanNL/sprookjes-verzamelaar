@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import './screens/verzameling.dart'; // Importeer de verzameling.dart
 import 'screens/instellingen.dart';
-import './screens/kleurplaten.dart'; 
+import './screens/kleurplaten.dart';
 
 /// Importeer de settings.dart
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({super.key});
 
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
@@ -20,7 +20,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: IndexedStack(
         index: currentPageIndex,
-        children: [
+        children: const [
           Verzameling(), // Widget voor de "Home" bestemming
           Kleurplaten(), // Widget voor de "Profile" bestemming
           Instellingen(), // Widget voor de "Settings" bestemming
