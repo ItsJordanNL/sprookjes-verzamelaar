@@ -28,21 +28,18 @@ class _BottomNavigationState extends State<BottomNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.grid_on_outlined, color: textcolor),
-            activeIcon: Icon(Icons.grid_on,
-                color: textcolor), // Icon filled when active
+            icon: Icon(Icons.book_outlined, color: textcolor),
+            activeIcon: Icon(Icons.book), // Icon filled when active
             label: 'Verzameling',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.palette_outlined, color: textcolor),
-            activeIcon: Icon(Icons.palette,
-                color: textcolor), // Icon filled when active
+            activeIcon: Icon(Icons.palette), // Icon filled when active
             label: 'Kleurplaten',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings_outlined, color: textcolor),
-            activeIcon: Icon(Icons.settings,
-                color: textcolor), // Icon filled when active
+            activeIcon: Icon(Icons.settings), // Icon filled when active
             label: 'Instellingen',
           ),
         ],
@@ -56,8 +53,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
         unselectedItemColor: textcolor
             .withOpacity(0.75), // Set unselected item color to a lighter shade
         selectedItemColor: textcolor, // Set selected item color to white
-        unselectedIconTheme: IconThemeData(
-        color: textcolor.withOpacity(0.75)), // Set the theme for selected icons
+        unselectedIconTheme: const IconThemeData(
+        color: textcolor), // Set the theme for selected icons
       ),
     );
   }
