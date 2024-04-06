@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/constants.dart';
 
 class Verzameling extends StatefulWidget {
   const Verzameling({super.key});
@@ -27,7 +28,7 @@ class _HomeState extends State<Verzameling> {
                     style: TextStyle(fontFamily: 'Roboto Slab', fontSize: 26),
                   ),
                 ),
-                backgroundColor: const Color(0xFFAC1A2F),
+                backgroundColor: darkred,
                 foregroundColor: Colors.white,
               )),
           body: const SingleChildScrollView(
