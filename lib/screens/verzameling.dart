@@ -16,16 +16,16 @@ class _HomeState extends State<Verzameling> {
         home: Scaffold(
           appBar: PreferredSize(
               preferredSize:
-                  const Size.fromHeight(95), // here the desired height
+                  const Size.fromHeight(90), // here the desired height
               child: AppBar(
-                toolbarHeight: 95, // Set this height
+                toolbarHeight: 90, // Set this height
                 centerTitle: true,
                 title: Container(
                   margin: const EdgeInsets.only(
                       top: 40), // Adjust the bottom margin as needed
                   child: const Text(
                     'Verzameling',
-                    style: TextStyle(fontFamily: 'Roboto Slab', fontSize: 26),
+                    style: TextStyle(fontFamily: 'Pretaporter Slab', fontSize: 30),
                   ),
                 ),
                 backgroundColor: darkred,
