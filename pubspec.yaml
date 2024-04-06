@@ -58,8 +58,40 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/sprookjes/sprookje1.jpg
+    - assets/images/sprookjes/sprookje2.jpg
+    - assets/images/sprookjes/sprookje3.jpg
+    - assets/images/sprookjes/sprookje4.jpg
+    - assets/images/sprookjes/sprookje5.jpg
+    - assets/images/sprookjes/sprookje6.jpg
+    - assets/images/sprookjes/sprookje7.jpg
+    - assets/images/sprookjes/sprookje8.jpg
+    - assets/images/sprookjes/sprookje9.jpg
+    - assets/images/sprookjes/sprookje10.jpg
+    - assets/images/sprookjes/sprookje11.jpg
+    - assets/images/sprookjes/sprookje12.jpg
+    - assets/images/sprookjes/sprookje13.jpg
+    - assets/images/sprookjes/sprookje14.jpg
+    - assets/images/sprookjes/sprookje15.jpg
+    - assets/images/sprookjes/sprookje16.jpg
+    - assets/images/sprookjes/sprookje17.jpg
+    - assets/images/sprookjes/sprookje18.jpg
+    - assets/images/sprookjes/sprookje19.jpg
+    - assets/images/sprookjes/sprookje20.jpg
+    - assets/images/sprookjes/sprookje21.jpg
+    - assets/images/sprookjes/sprookje22.jpg
+    - assets/images/sprookjes/sprookje23.jpg
+    - assets/images/sprookjes/sprookje24.jpg
+    - assets/images/sprookjes/sprookje25.jpg
+    - assets/images/sprookjes/sprookje26.jpg
+    - assets/images/sprookjes/sprookje27.jpg
+    - assets/images/sprookjes/sprookje28.jpg
+    - assets/images/sprookjes/sprookje29.jpg
+    - assets/images/sprookjes/sprookje30.jpg
+
+
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
