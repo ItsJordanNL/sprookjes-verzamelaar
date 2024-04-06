@@ -39,46 +39,45 @@ class _VerzamelingState extends State<Verzameling> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Padding(
+          child: GridView.count(
             padding: const EdgeInsets.all(15),
-            child: GridView.count(
-              crossAxisCount: 3,
-              mainAxisSpacing: 20,
-              crossAxisSpacing: 20,
-              children: List.generate(30, (index) {
-                // Assuming you have image assets named 'sprookje1.jpg', 'sprookje2.jpg', ..., 'sprookje30.jpg' in a folder named 'sprookjes'
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      imageClickedList[index] = !imageClickedList[index];
-                    });
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.all(2),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(99999),
-                      border: Border.all(color: textcolor, width: 5),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(99999),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          Image.asset(
-                            'assets/images/sprookjes/sprookje${index + 1}.jpg',
-                            fit: BoxFit.cover,
+            crossAxisCount: 3,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+            childAspectRatio: 1, // Adjust the aspect ratio to maintain circular shapes
+            children: List.generate(30, (index) {
+              // Assuming you have image assets named 'sprookje1.jpg', 'sprookje2.jpg', ..., 'sprookje30.jpg' in a folder named 'sprookjes'
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    imageClickedList[index] = !imageClickedList[index];
+                  });
+                },
+                child: Container(
+                  margin: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(99999),
+                    border: Border.all(color: textcolor, width: 5),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(99999),
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        Image.asset(
+                          'assets/images/sprookjes/sprookje${index + 1}.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                        if (!imageClickedList[index])
+                          Container(
+                            color: Colors.grey.withOpacity(0.8), // Gray overlay
                           ),
-                          if (!imageClickedList[index])
-                            Container(
-                              color: Colors.grey.withOpacity(0.8), // Gray overlay
-                            ),
-                        ],
-                      ),
+                      ],
                     ),
                   ),
-                );
-              }),
-            ),
+                ),
+              );
+            }),
           ),
         ),
       ),
