@@ -16,9 +16,9 @@ class _HomeState extends State<Verzameling> {
         home: Scaffold(
           appBar: PreferredSize(
               preferredSize:
-                  const Size.fromHeight(90), // here the desired height
+                  const Size.fromHeight(85), // here the desired height
               child: AppBar(
-                toolbarHeight: 90, // Set this height
+                toolbarHeight: 85, // Set this height
                 centerTitle: true,
                 title: Container(
                   margin: const EdgeInsets.only(
