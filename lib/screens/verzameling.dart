@@ -30,7 +30,7 @@ class _HomeState extends State<Verzameling> {
                   ),
                 ),
                 backgroundColor: darkred,
-                foregroundColor: Colors.white,
+                foregroundColor: textcolor,
               )),
           body: const SingleChildScrollView(
             child: Text(
