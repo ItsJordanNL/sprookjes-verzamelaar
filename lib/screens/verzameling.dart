@@ -12,10 +12,13 @@ class _HomeState extends State<Verzameling> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text(
-          "Home",
-          style: TextStyle(fontSize: 16.0),
+          'Verzameling',
+          style: TextStyle(fontFamily: 'Roboto Slab', fontSize: 20.0),
         ),
+        backgroundColor: const Color(0xFFAC1A2F),
+        foregroundColor: Colors.white,
       ),
       body: const SingleChildScrollView(
         child: Text(

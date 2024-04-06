@@ -81,7 +81,7 @@ flutter:
   #         style: italic
     - family: Roboto Slab
       fonts:
-        - asset: assets/fonts/RobotoSlab-Bold.ttf
+        - asset: assets/fonts/RobotoSlab-Medium.ttf
         # - asset: fonts/TrajanPro_Bold.ttf
         #   weight: 700
   #
