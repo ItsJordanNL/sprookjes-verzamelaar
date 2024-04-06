@@ -25,7 +25,8 @@ class _HomeState extends State<Verzameling> {
                       top: 40), // Adjust the bottom margin as needed
                   child: const Text(
                     'Verzameling',
-                    style: TextStyle(fontFamily: 'Pretaporter Slab', fontSize: 30),
+                    style:
+                        TextStyle(fontFamily: 'Pretaporter Slab', fontSize: 30),
                   ),
                 ),
                 backgroundColor: darkred,

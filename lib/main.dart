@@ -10,8 +10,6 @@ void main() {
     FlutterNativeSplash.remove();
 }
 
-
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
