@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/constants.dart';
 
 class Verzameling extends StatefulWidget {
-  const Verzameling({super.key});
+  const Verzameling({Key? key});
 
   @override
   State<Verzameling> createState() => _VerzamelingState();
@@ -10,10 +10,12 @@ class Verzameling extends StatefulWidget {
 
 class _VerzamelingState extends State<Verzameling> {
   List<bool> imageClickedList = List.generate(30, (index) => false);
-  double progress = 0.0; // Initial progress
+  int collectedCount = 0; // Initial collected count
 
   @override
   Widget build(BuildContext context) {
+    double progress = collectedCount / 30;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -33,18 +35,20 @@ class _VerzamelingState extends State<Verzameling> {
             foregroundColor: textcolor,
           ),
         ),
-        body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/achtergrond.jpg'),
-                    fit: BoxFit.cover,
-                  ),
+        body: Stack(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/achtergrond.jpg'),
+                  fit: BoxFit.cover,
                 ),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 55, right: 15, bottom: 15, left: 15),
                 child: GridView.count(
-                  padding: const EdgeInsets.only(top: 30, right: 15, bottom: 15, left: 15),
                   crossAxisCount: 3,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
@@ -57,7 +61,8 @@ class _VerzamelingState extends State<Verzameling> {
                       onTap: () {
                         setState(() {
                           imageClickedList[index] = !imageClickedList[index];
-                          progress = (imageClickedList.where((clicked) => clicked).length / 30) * 100; // Calculate progress
+                          // Update collectedCount based on clicked images
+                          collectedCount = imageClickedList.where((clicked) => clicked).length;
                         });
                       },
                       child: Container(
@@ -87,21 +92,48 @@ class _VerzamelingState extends State<Verzameling> {
                   }),
                 ),
               ),
-              Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0), // Margin of 15 from all sides
-                  child: LinearProgressIndicator(
-                    value: progress / 100, // Set progress value
-                    backgroundColor: Colors.grey[300],
-                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
-                  ),
+            ),
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10, right: 40, left: 15), // Margin of 15 from all sides
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      '$collectedCount/30 sprookjes verzameld voor badge',
+                      style: TextStyle(color: textcolor.withOpacity(0.8), fontSize: 16),
+                      textAlign: TextAlign.center,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(8.0),
+                        bottomLeft: Radius.circular(8.0),
+                      ),
+                      child: LinearProgressIndicator(
+                        value: progress, // Set progress value
+                        backgroundColor: textcolor.withOpacity(0.8),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          progress == 1.0 ? darkred.withOpacity(0.8) : darkred.withOpacity(0.5),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+            Positioned(
+              top: 15,
+              right: 7.5, // Position the icon at the end of the progress bar
+              child: Icon(
+                Icons.local_police_outlined,
+                color: progress == 1.0 ? darkred.withOpacity(0.8) : textcolor.withOpacity(0.8),
+                size: 40,
+              ),
+            ),
+          ],
         ),
       ),
     );
