@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/constants.dart';
 
 class Verzameling extends StatefulWidget {
-  const Verzameling({Key? key});
+  const Verzameling({superkey});
 
   @override
   State<Verzameling> createState() => _VerzamelingState();
@@ -11,10 +11,18 @@ class Verzameling extends StatefulWidget {
 class _VerzamelingState extends State<Verzameling> {
   List<bool> imageClickedList = List.generate(30, (index) => false);
   int collectedCount = 0; // Initial collected count
+  bool _popupShown = false; // Track if the popup is already shown
 
   @override
   Widget build(BuildContext context) {
     double progress = collectedCount / 30;
+
+    if (progress == 1.0 && !_popupShown) {
+      _popupShown = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _showPopup(context, progress);
+      });
+    }
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -47,12 +55,14 @@ class _VerzamelingState extends State<Verzameling> {
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(top: 55, right: 15, bottom: 15, left: 15),
+                padding: const EdgeInsets.only(
+                    top: 55, right: 15, bottom: 15, left: 15),
                 child: GridView.count(
                   crossAxisCount: 3,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
-                  childAspectRatio: 1, // Adjust the aspect ratio to maintain circular shapes
+                  childAspectRatio:
+                      1, // Adjust the aspect ratio to maintain circular shapes
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   children: List.generate(30, (index) {
@@ -62,7 +72,9 @@ class _VerzamelingState extends State<Verzameling> {
                         setState(() {
                           imageClickedList[index] = !imageClickedList[index];
                           // Update collectedCount based on clicked images
-                          collectedCount = imageClickedList.where((clicked) => clicked).length;
+                          collectedCount = imageClickedList
+                              .where((clicked) => clicked)
+                              .length;
                         });
                       },
                       child: Stack(
@@ -85,7 +97,8 @@ class _VerzamelingState extends State<Verzameling> {
                                   ),
                                   if (!imageClickedList[index])
                                     Container(
-                                      color: Colors.grey.withOpacity(0.8), // Gray overlay
+                                      color: Colors.grey
+                                          .withOpacity(0.8), // Gray overlay
                                     ),
                                 ],
                               ),
@@ -93,7 +106,8 @@ class _VerzamelingState extends State<Verzameling> {
                           ),
                           // Lock icon
                           Visibility(
-                            visible: !imageClickedList[index], // Show only if the image is not clicked
+                            visible: !imageClickedList[
+                                index], // Show only if the image is not clicked
                             child: const Icon(
                               Icons.lock,
                               color: Colors.white,
@@ -112,29 +126,47 @@ class _VerzamelingState extends State<Verzameling> {
               left: 0,
               right: 0,
               child: Padding(
-                padding: const EdgeInsets.only(top: 10, right: 40, left: 15), // Margin of 15 from all sides
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      '$collectedCount/30 sprookjes verzameld voor badge',
-                      style: TextStyle(color: textcolor.withOpacity(0.8), fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                    ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(8.0),
-                        bottomLeft: Radius.circular(8.0),
+                padding: const EdgeInsets.only(
+                    top: 10,
+                    right: 40,
+                    left: 15), // Margin of 15 from all sides
+                child: GestureDetector(
+                  onTap: () {
+                    _showPopup(context,
+                        progress); // Pass the 'progress' variable as an argument
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        '$collectedCount/30 sprookjes verzameld voor badge',
+                        style: TextStyle(
+                            color: textcolor.withOpacity(0.8), fontSize: 16),
+                        textAlign: TextAlign.center,
                       ),
-                      child: LinearProgressIndicator(
-                        value: progress, // Set progress value
-                        backgroundColor: textcolor.withOpacity(0.8),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          progress == 1.0 ? darkred.withOpacity(0.8) : darkred.withOpacity(0.5),
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(8.0),
+                          bottomLeft: Radius.circular(8.0),
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            _showPopup(context,
+                                progress); // Pass the 'progress' variable as an argument
+                          },
+                          child: LinearProgressIndicator(
+                            value: progress, // Set progress value
+                            backgroundColor: textcolor.withOpacity(0.8),
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              progress == 1.0
+                                  ? darkred.withOpacity(0.8)
+                                  : darkred.withOpacity(0.5),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -143,13 +175,74 @@ class _VerzamelingState extends State<Verzameling> {
               right: 7.5, // Position the icon at the end of the progress bar
               child: Icon(
                 Icons.local_police_outlined,
-                color: progress == 1.0 ? darkred.withOpacity(0.8) : textcolor.withOpacity(0.8),
+                color: progress == 1.0
+                    ? darkred.withOpacity(0.8)
+                    : textcolor.withOpacity(0.8),
                 size: 40,
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  void _showPopup(BuildContext context, double progress) {
+    String title;
+    String imagePath;
+    String contentText;
+
+    if (progress == 1.0) {
+      title = 'Alle sprookjes verzameld';
+      imagePath =
+          'assets/images/qr_code.jpg'; // Change to completed image asset path
+      contentText =
+          'Als beloning kan je nu jouw medaille gaan halen bij de Efteling cadeauwinkel. Laat een medewerker deze QR-Code scannen en ontvang jouw beloning!';
+    } else {
+      title = 'Kom hier later terug';
+      imagePath = 'assets/images/qr_code_blurred.jpg'; // Default image asset path
+      contentText =
+          'Wanneer je meer sprookjes hebt verzameld kun je hier terugkomen om de QR-Code te laten scannen door een Efteling medewerker, en de badge te innen bij de Efteling giftshop.';
+    }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: textcolor, // Set background color to textcolor
+          surfaceTintColor: Colors.transparent,
+          title: Center(
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontFamily: 'Pretaporter Slab', // Set your custom font family
+                fontSize: 24, // Set your custom font size
+              ),
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                imagePath,
+                width: 200, // Adjust width as needed
+                height: 200, // Adjust height as needed
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 10),
+              Text(contentText),
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
