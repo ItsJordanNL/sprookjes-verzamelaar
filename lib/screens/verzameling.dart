@@ -94,7 +94,7 @@ class _VerzamelingState extends State<Verzameling> {
                           // Lock icon
                           Visibility(
                             visible: !imageClickedList[index], // Show only if the image is not clicked
-                            child: Icon(
+                            child: const Icon(
                               Icons.lock,
                               color: Colors.white,
                               size: 30,
@@ -122,7 +122,7 @@ class _VerzamelingState extends State<Verzameling> {
                       textAlign: TextAlign.center,
                     ),
                     ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(8.0),
                         bottomLeft: Radius.circular(8.0),
                       ),
