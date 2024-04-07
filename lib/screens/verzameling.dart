@@ -65,28 +65,42 @@ class _VerzamelingState extends State<Verzameling> {
                           collectedCount = imageClickedList.where((clicked) => clicked).length;
                         });
                       },
-                      child: Container(
-                        margin: const EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(99999),
-                          border: Border.all(color: textcolor, width: 5),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(99999),
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              Image.asset(
-                                'assets/images/sprookjes/sprookje${index + 1}.jpg',
-                                fit: BoxFit.cover,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(99999),
+                              border: Border.all(color: textcolor, width: 5),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(99999),
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/sprookjes/sprookje${index + 1}.jpg',
+                                    fit: BoxFit.cover,
+                                  ),
+                                  if (!imageClickedList[index])
+                                    Container(
+                                      color: Colors.grey.withOpacity(0.8), // Gray overlay
+                                    ),
+                                ],
                               ),
-                              if (!imageClickedList[index])
-                                Container(
-                                  color: Colors.grey.withOpacity(0.8), // Gray overlay
-                                ),
-                            ],
+                            ),
                           ),
-                        ),
+                          // Lock icon
+                          Visibility(
+                            visible: !imageClickedList[index], // Show only if the image is not clicked
+                            child: Icon(
+                              Icons.lock,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                          ),
+                        ],
                       ),
                     );
                   }),
