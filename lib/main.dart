@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'screens/introductie.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Roboto'),
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      home: const OnBoardingPage(),
     );
   }
 }
