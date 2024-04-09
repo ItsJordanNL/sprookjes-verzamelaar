@@ -77,7 +77,7 @@ class _VerzamelingState extends State<Verzameling> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const Verhaal()), // Navigate to 'sprookje.dart'
+                                       Verhaal(selectedIndex: index)), // Navigate to 'sprookje.dart'
                             );
                           } else {
                             // If the image is not clicked, toggle the click state

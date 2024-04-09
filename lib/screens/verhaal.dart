@@ -1,19 +1,29 @@
 import "package:flutter/material.dart";
+import "../components/sprookjes.dart";
 
-class Verhaal extends StatefulWidget {
-  const Verhaal({super.key});
+class Verhaal extends StatelessWidget {
+  Verhaal({super.key, required this.selectedIndex});
 
-  @override
-  State<Verhaal> createState() => _VerhaalState();
-}
+  final int selectedIndex;
 
-class _VerhaalState extends State<Verhaal> {
+  List<Sprookjes> sprookje = [];
+
+  void _getInitialInfo() {
+    sprookje = Sprookjes.getSprookje();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _getInitialInfo();
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Doornroosje"),
+        appBar: AppBar(
+      title: Text(
+        sprookje.length > selectedIndex
+            ? sprookje[selectedIndex].title
+            : 'Geen titel beschikbaar',
       ),
-    );
+      centerTitle: true,
+      
+    ));
   }
 }
