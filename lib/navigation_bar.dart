@@ -49,7 +49,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             currentPageIndex = index;
           });
         },
-        backgroundColor: darkred,
+        backgroundColor: primary,
         unselectedItemColor: textcolor
             .withOpacity(0.75), // Set unselected item color to a lighter shade
         selectedItemColor: textcolor, // Set selected item color to white
