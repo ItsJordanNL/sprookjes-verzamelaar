@@ -1,10 +1,8 @@
-import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
 
 class Sprookjes {
   String title;
   String story;
-  Image image;
+  String image;
   String audio;
   String question;
 
@@ -21,7 +19,7 @@ class Sprookjes {
 
     sprookje.add(Sprookjes(
         title: 'Doornroosje',
-        image: Image.asset('assets/images/sprookjes/sprookje1.jpg'),
+        image: 'assets/images/sprookjes/sprookje1.jpg',
         story:
             '''Er waren eens een koning en een koningin. Zij hadden een grote wens. Ze wilden heel graag een kindje. 
 
@@ -35,7 +33,7 @@ class Sprookjes {
 
     sprookje.add(Sprookjes(
       title: 'Assepoester',
-      image: Image.asset('assets/images/sprookjes/sprookje1.jpg'),
+      image: 'assets/images/sprookjes/sprookje2.jpg',
       story:
           '''Boeie ruurd''',
       audio: '',
