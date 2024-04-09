@@ -67,66 +67,69 @@ class _VerzamelingState extends State<Verzameling> {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   children: List.generate(30, (index) {
-  // Assuming you have image assets named 'sprookje1.jpg', 'sprookje2.jpg', ..., 'sprookje30.jpg' in a folder named 'sprookjes'
-  return GestureDetector(
-    onTap: () {
-      setState(() {
-        if (imageClickedList[index]) {
-          // If the image is already clicked, navigate to the 'sprookje.dart' page
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Verhaal()), // Navigate to 'sprookje.dart'
-          );
-        } else {
-          // If the image is not clicked, toggle the click state
-          imageClickedList[index] = !imageClickedList[index];
-          // Update collectedCount based on clicked images
-          collectedCount = imageClickedList
-              .where((clicked) => clicked)
-              .length;
-        }
-      });
-    },
-    child: Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          margin: const EdgeInsets.all(2),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(99999),
-            border: Border.all(color: textcolor, width: 5),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(99999),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                Image.asset(
-                  'assets/images/sprookjes/sprookje${index + 1}.jpg',
-                  fit: BoxFit.cover,
-                ),
-                if (!imageClickedList[index])
-                  Container(
-                    color: Colors.grey
-                        .withOpacity(0.8), // Gray overlay
-                  ),
-              ],
-            ),
-          ),
-        ),
-        // Lock icon
-        Visibility(
-          visible: !imageClickedList[index], // Show only if the image is not clicked
-          child: const Icon(
-            Icons.lock,
-            color: Colors.white,
-            size: 30,
-          ),
-        ),
-      ],
-    ),
-  );
-}),
+                    // Assuming you have image assets named 'sprookje1.jpg', 'sprookje2.jpg', ..., 'sprookje30.jpg' in a folder named 'sprookjes'
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (imageClickedList[index]) {
+                            // If the image is already clicked, navigate to the 'sprookje.dart' page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const Verhaal()), // Navigate to 'sprookje.dart'
+                            );
+                          } else {
+                            // If the image is not clicked, toggle the click state
+                            imageClickedList[index] = !imageClickedList[index];
+                            // Update collectedCount based on clicked images
+                            collectedCount = imageClickedList
+                                .where((clicked) => clicked)
+                                .length;
+                          }
+                        });
+                      },
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(99999),
+                              border: Border.all(color: textcolor, width: 5),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(99999),
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/sprookjes/sprookje${index + 1}.jpg',
+                                    fit: BoxFit.cover,
+                                  ),
+                                  if (!imageClickedList[index])
+                                    Container(
+                                      color: Colors.grey
+                                          .withOpacity(0.8), // Gray overlay
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          // Lock icon
+                          Visibility(
+                            visible: !imageClickedList[
+                                index], // Show only if the image is not clicked
+                            child: const Icon(
+                              Icons.lock,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
                 ),
               ),
             ),
@@ -209,7 +212,8 @@ class _VerzamelingState extends State<Verzameling> {
           'Als beloning kan je nu jouw medaille gaan halen bij de Efteling cadeauwinkel. Laat een medewerker deze QR-Code scannen en ontvang jouw beloning!';
     } else {
       title = 'Kom hier later terug';
-      imagePath = 'assets/images/qr_code_blurred.jpg'; // Default image asset path
+      imagePath =
+          'assets/images/qr_code_blurred.jpg'; // Default image asset path
       contentText =
           'Wanneer je meer sprookjes hebt verzameld kun je hier terugkomen om de QR-Code te laten scannen door een Efteling medewerker, en de badge te innen bij de Efteling giftshop.';
     }
@@ -243,11 +247,13 @@ class _VerzamelingState extends State<Verzameling> {
             ],
           ),
           actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Close'),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Close'),
+              ),
             ),
           ],
         );
