@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/constants.dart';
 
 class Verzameling extends StatefulWidget {
-  const Verzameling({superkey});
+  const Verzameling({super.key});
 
   @override
   State<Verzameling> createState() => _VerzamelingState();
