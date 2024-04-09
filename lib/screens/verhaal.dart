@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "../components/sprookjes.dart";
 
+// ignore: must_be_immutable
 class Verhaal extends StatelessWidget {
   Verhaal({super.key, required this.selectedIndex});
 
