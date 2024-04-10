@@ -26,6 +26,8 @@ class PairingPage extends StatefulWidget {
 
 class PairingPageState extends State<PairingPage> {
   bool showButton = false;
+  String displayText =
+      'Houd de Twinkeltoorts tegen uw telefoon om hem te verbinden...';
 
   @override
   void initState() {
@@ -33,6 +35,8 @@ class PairingPageState extends State<PairingPage> {
     Future.delayed(const Duration(seconds: 5), () {
       setState(() {
         showButton = true;
+        displayText =
+            'De twinkeltoorts is succesvol verbonden! Klik hieronder op start'; // Change text after delay
       });
     });
   }
@@ -46,7 +50,7 @@ class PairingPageState extends State<PairingPage> {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/stars.jpg'),
-                fit: BoxFit.cover, // Cover the entire container
+                fit: BoxFit.cover,
               ),
             ),
             child: Center(
@@ -57,7 +61,7 @@ class PairingPageState extends State<PairingPage> {
                     alignment: Alignment.center,
                     children: [
                       CircleAvatar(
-                        radius: 95, // Adjust the size as needed
+                        radius: 95,
                         backgroundColor: showButton
                             ? const Color.fromARGB(255, 1, 155, 85)
                             : Colors.transparent,
@@ -66,8 +70,8 @@ class PairingPageState extends State<PairingPage> {
                           children: [
                             const CircleAvatar(
                               radius: 85,
-                              backgroundImage: AssetImage(
-                                  'assets/images/twinkeltoorts.jpg'), // Add your image asset path
+                              backgroundImage:
+                                  AssetImage('assets/images/twinkeltoorts.jpg'),
                             ),
                             Positioned.fill(
                               child: Visibility(
@@ -75,9 +79,8 @@ class PairingPageState extends State<PairingPage> {
                                 child: const CircularProgressIndicator(
                                   valueColor: AlwaysStoppedAnimation<Color>(
                                       Color.fromARGB(255, 5, 160, 185)),
-                                  strokeWidth:
-                                      10, // Customize the thickness of the loading animation
-                                ), // Circular loading animation
+                                  strokeWidth: 10,
+                                ),
                               ),
                             ),
                           ],
@@ -85,12 +88,12 @@ class PairingPageState extends State<PairingPage> {
                       ),
                     ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(35.0), // Reduced padding here
+                  Padding(
+                    padding: const EdgeInsets.all(35.0),
                     child: Text(
-                      'Houd de Twinkeltoorts tegen uw telefoon om hem te verbinden...',
+                      displayText, // Use the displayText variable
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25, color: textcolor),
+                      style: const TextStyle(fontSize: 25, color: textcolor),
                     ),
                   ),
                   const SizedBox(height: 100),
@@ -104,8 +107,8 @@ class PairingPageState extends State<PairingPage> {
               right: 0,
               bottom: 80,
               child: Container(
-                color: Colors.transparent, // Match with background
-                padding: const EdgeInsets.symmetric(horizontal: 132),
+                color: Colors.transparent,
+                padding: const EdgeInsets.symmetric(horizontal: 105),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -114,15 +117,18 @@ class PairingPageState extends State<PairingPage> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: lightblue, // Set background color to light blue
+                    backgroundColor: lightblue,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12), // Set border radius to 10
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    padding: const EdgeInsets.all(5), // Increase padding to make button bigger
+                    padding: const EdgeInsets.only(top: 5, bottom: 2),
                   ),
                   child: const Text(
                     'Start',
-                    style: TextStyle(fontSize: 32, color: textcolor, fontFamily: 'Pretaporter Slab'),
+                    style: TextStyle(
+                        fontSize: 32,
+                        color: textcolor,
+                        fontFamily: 'Pretaporter Slab'),
                   ),
                 ),
               ),
