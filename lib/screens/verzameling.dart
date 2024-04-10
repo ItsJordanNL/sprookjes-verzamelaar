@@ -171,7 +171,7 @@ class _VerzamelingState extends State<Verzameling> {
                             backgroundColor: textcolor.withOpacity(0.8),
                             valueColor: AlwaysStoppedAnimation<Color>(
                               progress == 1.0
-                                  ? primary.withOpacity(0.8)
+                                  ? primary.withOpacity(0.6)
                                   : primary.withOpacity(0.5),
                             ),
                           ),
@@ -188,7 +188,7 @@ class _VerzamelingState extends State<Verzameling> {
               child: Icon(
                 Icons.local_police_outlined,
                 color: progress == 1.0
-                    ? primary.withOpacity(0.8)
+                    ? const Color.fromARGB(255, 102, 103, 145).withOpacity(0.8)
                     : textcolor.withOpacity(0.8),
                 size: 40,
               ),
