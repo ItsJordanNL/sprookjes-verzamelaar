@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './screens/verzameling.dart';
-import './screens/instellingen.dart';
-import './screens/kleurplaten.dart';
-import './components/constants.dart';
+import '../screens/verzameling.dart';
+import '../screens/instellingen.dart';
+import '../screens/kleurplaten.dart';
+import 'constants.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
