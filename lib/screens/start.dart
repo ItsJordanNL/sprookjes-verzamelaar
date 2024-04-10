@@ -57,7 +57,7 @@ class PairingPageState extends State<PairingPage> {
                     alignment: Alignment.center,
                     children: [
                       CircleAvatar(
-                        radius: 90, // Adjust the size as needed
+                        radius: 95, // Adjust the size as needed
                         backgroundColor: showButton
                             ? const Color.fromARGB(255, 1, 155, 85)
                             : Colors.transparent,
@@ -67,7 +67,7 @@ class PairingPageState extends State<PairingPage> {
                             const CircleAvatar(
                               radius: 85,
                               backgroundImage: AssetImage(
-                                  'assets/images/qr_code.jpg'), // Add your image asset path
+                                  'assets/images/twinkeltoorts.jpg'), // Add your image asset path
                             ),
                             Positioned.fill(
                               child: Visibility(
@@ -86,7 +86,7 @@ class PairingPageState extends State<PairingPage> {
                     ],
                   ),
                   const Padding(
-                    padding: EdgeInsets.all(30.0), // Reduced padding here
+                    padding: EdgeInsets.all(35.0), // Reduced padding here
                     child: Text(
                       'Houd de Twinkeltoorts tegen uw telefoon om hem te verbinden...',
                       textAlign: TextAlign.center,
@@ -105,7 +105,7 @@ class PairingPageState extends State<PairingPage> {
               bottom: 80,
               child: Container(
                 color: Colors.transparent, // Match with background
-                padding: const EdgeInsets.symmetric(horizontal: 120),
+                padding: const EdgeInsets.symmetric(horizontal: 132),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -116,13 +116,13 @@ class PairingPageState extends State<PairingPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: lightblue, // Set background color to light blue
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Set border radius to 5
+                      borderRadius: BorderRadius.circular(12), // Set border radius to 10
                     ),
-                    padding: const EdgeInsets.all(15), // Increase padding to make button bigger
+                    padding: const EdgeInsets.all(5), // Increase padding to make button bigger
                   ),
                   child: const Text(
                     'Start',
-                    style: TextStyle(fontSize: 30, color: textcolor, fontFamily: 'Pretaporter Slab'),
+                    style: TextStyle(fontSize: 32, color: textcolor, fontFamily: 'Pretaporter Slab'),
                   ),
                 ),
               ),
