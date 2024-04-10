@@ -20,50 +20,53 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget buildFullscreenImage() {
-    return Image.asset(
-      'assets/fullscreen.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-    );
-  }
-
-  Widget _buildImage(String assetName, [double width = 350]) {
-    return Image.asset('assets/$assetName', width: width);
-  }
-
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
-
-    const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
-      imagePadding: EdgeInsets.zero,
-    );
-
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: textcolor,
       allowImplicitScrolling: true,
       pages: [
         PageViewModel(
-          title: "Fractional shares",
-          body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('images/qr_code.jpg'),
-          decoration: pageDecoration,
+          title: "Ontdek het Sprookjesbos",
+          body: 'Welkom in het Sprookjesbos',
+          image: Container(
+            padding: const EdgeInsets.only(top: 150),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(
+                  100), // Aangepaste waarde voor de mate van afgeronde hoeken
+              child: Image.asset(
+                'assets/images/qr_code.jpg',
+                height: 200,
+              ),
+            ),
+          ),
+          decoration: const PageDecoration(
+            titleTextStyle:
+                TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
         ),
+
+
+
         PageViewModel(
-          title: "Learn as you go",
-          body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
-          image: _buildImage('images/qr_code.jpg'),
-          decoration: pageDecoration,
+          title: "Ontdek het Sprookjesbos",
+          body: 'Welkom in het Sprookjesbos',
+          image: Container(
+            padding: const EdgeInsets.only(top: 150),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(
+                  100), // Aangepaste waarde voor de mate van afgeronde hoeken
+              child: Image.asset(
+                'assets/images/qr_code.jpg',
+                height: 200,
+              ),
+            ),
+          ),
+          decoration: const PageDecoration(
+            titleTextStyle:
+                TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
         ),
       ],
       onDone: () => _onIntroEnd(context),
@@ -71,13 +74,14 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       showSkipButton: true,
       skipOrBackFlex: 0,
       nextFlex: 0,
-      showBackButton: false,
       //rtl: true, // Display as right-to-left
       back: const Icon(Icons.arrow_back),
       skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
       next: const Icon(Icons.arrow_forward),
       done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
       curve: Curves.fastLinearToSlowEaseIn,
+
+      controlsPosition: const Position(left: 0, right: 0, top: 40, bottom: 0),
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
           ? const EdgeInsets.all(12.0)
@@ -85,13 +89,12 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       dotsDecorator: const DotsDecorator(
         size: Size(12.5, 12.5),
         color: Color(0xFFBDBDBD),
-        // activeSize: Size(15.0, 15.0),
+        activeSize: Size(15.0, 15.0),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-        color: Colors.black87,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),

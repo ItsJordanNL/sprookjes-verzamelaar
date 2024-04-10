@@ -28,7 +28,6 @@ class Verhaal extends StatelessWidget {
               const SizedBox(height: 100),
               _imageSection(),
               const SizedBox(height: 20),
-              // Voeg hier andere widgets toe voor de inhoud van de pagina
             ],
           ),
         ],
@@ -39,7 +38,7 @@ class Verhaal extends StatelessWidget {
   Widget _backgroundImage() {
     return Positioned.fill(
       child: Image.asset(
-        'assets/images/paperbackground.jpg', // Vervang 'background_image.jpg' door het pad naar jouw achtergrondafbeelding
+        'assets/images/paperbackground.jpg', 
         fit: BoxFit.cover,
       ),
     );
@@ -62,12 +61,12 @@ class Verhaal extends StatelessWidget {
 
   AppBar appBar() {
     return AppBar(
-      backgroundColor: Colors.transparent, // Doorzichtige achtergrondkleur
-      elevation: 0, // Verwijder de schaduw
+      backgroundColor: Colors.transparent, 
+      elevation: 0,
       title: Text(
         sprookje.length > selectedIndex
             ? sprookje[selectedIndex].title
-            : 'Geen titel beschikbaar',
+            : 'Geen titel beschikbaar', 
       ),
       centerTitle: true,
     );
