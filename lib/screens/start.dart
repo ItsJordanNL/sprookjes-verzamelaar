@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'introductie.dart';
 import '../components/constants.dart';
 
 class MyApp extends StatelessWidget {
@@ -113,7 +113,7 @@ class PairingPageState extends State<PairingPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Home()),
+                      MaterialPageRoute(builder: (context) => const OnBoardingPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
