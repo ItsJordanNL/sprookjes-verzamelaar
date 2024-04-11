@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sprookjesverzamelaar/test.dart';
 import 'screens/start.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Roboto'),
       debugShowCheckedModeBanner: false,
-      home: const PairingPage(),
+      home: const TestNFC(),
     );
   }
 }
