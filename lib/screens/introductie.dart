@@ -21,34 +21,38 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildFullscreenImage() {
-    return Image.asset(
-      'assets/images/paperbackground.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-    );
-  }
 
-  Widget _buildImage(String assetName, [double width = 350]) {
-    return Image.asset('assets/images/intro/intro1.jpg', width: width);
-  }
-
-  Widget _buildCircularImage(String assetName, [double size = 200]) {
-    return ClipOval(
-      child: Image.asset(
-        'assets/images/intro/$assetName',
-        width: size,
-        height: size,
-        fit: BoxFit.cover,
+Widget _buildCircularImage(String assetName, [double size = 200]) {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: primary, // Kleur van de border
+          width: 5.0, // Breedte van de border
+        ),
+      ),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          ClipOval(
+            child: Image.asset(
+              'assets/images/intro/$assetName',
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
       ),
     );
   }
 
+
+
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
+    const bodyStyle = TextStyle(fontSize: 18.0,);
+
 
     const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
@@ -67,47 +71,53 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       allowImplicitScrolling: true,
       pages: [
         PageViewModel(
-          title: "Welkom in het Sprookjesbos",
+          title: "Ontdek het Sprookjesbos",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+              "Ga op zoek naar alle sprookjes die te vinden zijn in het bos!",
           image: _buildCircularImage('intro1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "Scan het sprookje",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
+              """Scan met je Twinkeltoorts de NFC tag voor een magische interactie!
+
+          Hiermee verzamel je ook meteen het sprookje voor in je verzamel app!""",
           image: _buildCircularImage('intro1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "Beantwoord quizvragen",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
+          """Spaar dukaten door de Quizvragen juist te beantwoorden!
+
+          Met deze dukaten kun je namelijk kleurplaten kopen binnen de app.""",
           image: _buildCircularImage('intro1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
+          title: "Gevoelige content",
+          body: """In deze app kan sommige content als aanstootgevend worden ervaren.
+
+          Mocht u bepaalde filters willen toepassen, kunt u deze zelf aanvinken in [Instellingen].""",
           image: _buildCircularImage('intro1.jpg'),
           footer: Container(
             width: double.infinity, // Neem de volledige breedte van het scherm
             padding: const EdgeInsets.symmetric(
-                horizontal: 100.0), // Voeg padding toe aan de zijkanten
+                horizontal: 70.0), // Voeg padding toe aan de zijkanten
             child: ElevatedButton(
               onPressed: () {
                 _onIntroEnd(context);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightBlue,
+                backgroundColor: primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
-                ),// Stel de minimumgrootte van de knop in
+                ),
               ),
               child: const Text(
-                'FooButton',
-                style: TextStyle(color: Colors.white),
+                'Start met Verzamelen',
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
           ),
