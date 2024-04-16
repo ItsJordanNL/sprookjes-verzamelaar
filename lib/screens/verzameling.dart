@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import 'verhaal.dart';
 import '../components/constants.dart';
 
@@ -86,6 +87,7 @@ class _VerzamelingState extends State<Verzameling> {
                             collectedCount = imageClickedList
                                 .where((clicked) => clicked)
                                 .length;
+                              Vibration.vibrate(duration: 500);
                           }
                         });
                       },

@@ -40,7 +40,7 @@ class PairingPageState extends State<PairingPage> {
             'De twinkeltoorts is succesvol verbonden! Klik hieronder op start'; // Change text after delay
 
         // Tril de telefoon voor 1 seconde
-        Vibration.vibrate(duration: 1000);
+        Vibration.vibrate(duration: 2000);
       });
     });
   }
