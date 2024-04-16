@@ -158,8 +158,8 @@ class OnBoardingPageState extends State<OnBoardingPage> {
           done:
               const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
           curve: Curves.fastLinearToSlowEaseIn,
-          controlsPosition:
-              const Position(bottom: 0, left: 0, right: 0, top: 700),
+          // controlsPosition:
+          //     const Position(bottom: 0, left: 0, right: 0, top: 700),
           controlsMargin: const EdgeInsets.all(16),
           controlsPadding: kIsWeb
               ? const EdgeInsets.all(12.0)
