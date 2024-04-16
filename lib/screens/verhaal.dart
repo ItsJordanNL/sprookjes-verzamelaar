@@ -78,7 +78,7 @@ class _VerhaalState extends State<Verhaal> {
   }
 
   @override
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     final sprookje = Sprookjes.getSprookje()[widget.selectedIndex];
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -93,17 +93,21 @@ Widget build(BuildContext context) {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   _imageSection(sprookje),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   _listenToText(sprookje),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   _buildAudioControls(),
-                  SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      '${sprookje.story}',
-                      style: TextStyle(fontSize: 18),
-                    ),
+                  const SizedBox(height: 20),
+                  _verhaalText(sprookje),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  FloatingActionButton(onPressed: (){
+                    
+                  },
+                  child: Text('Quiz'),
+                  backgroundColor: primary,
+                  foregroundColor: textcolor,
                   ),
                 ],
               ),
@@ -114,7 +118,15 @@ Widget build(BuildContext context) {
     );
   }
 
-
+  Padding _verhaalText(Sprookjes sprookje) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Text(
+        sprookje.story,
+        style: const TextStyle(fontSize: 18),
+      ),
+    );
+  }
 
   Widget _buildAudioControls() {
     return Column(
@@ -125,7 +137,7 @@ Widget build(BuildContext context) {
             inactiveTrackColor: Colors.blue[100],
             trackShape: RoundedRectSliderTrackShape(),
             trackHeight: 4.0,
-            thumbColor:primary,
+            thumbColor: primary,
             thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
             overlayColor: Colors.blue.withAlpha(32),
             overlayShape: RoundSliderOverlayShape(overlayRadius: 28.0),
@@ -180,7 +192,9 @@ Widget build(BuildContext context) {
   Text _listenToText(Sprookjes sprookje) {
     return Text(
       "Luister naar ${sprookje.title}",
-      style: TextStyle(fontSize: 32, fontFamily: "Niconne", color: primary),
+      style:
+          const TextStyle(fontSize: 32, fontFamily: "Niconne", color: primary),
+          textAlign: TextAlign.center,
     );
   }
 
@@ -214,10 +228,9 @@ Widget build(BuildContext context) {
       elevation: 0,
       title: Text(
         sprookje.title,
-        style: TextStyle(color: primary),
+        style: const TextStyle(color: primary),
       ),
       centerTitle: true,
     );
   }
 }
-
