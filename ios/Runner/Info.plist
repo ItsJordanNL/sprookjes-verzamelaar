@@ -28,14 +28,28 @@
 	<true/>
 	<key>NFCReaderUsageDescription</key>
 	<string>We use NFC to read tags for specific actions.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app always needs Bluetooth to function</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app needs Bluetooth Peripheral to function</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app always needs location and when in use to function</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app always needs location to function</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs location when in use to function</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
 		<string>external-accessory</string>
 		<string>fetch</string>
 		<string>nearby-interaction</string>
 		<string>nfc-reader</string>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -39,6 +39,9 @@ dependencies:
   audioplayers: ^6.0.0
   nfc_manager: ^3.4.0
   shelf: ^1.4.1
+  flutter_blue_plus: ^1.32.2
+  get: ^4.6.6
+  permission_handler: ^11.3.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +69,7 @@ flutter:
     - assets/images/intro/intro1.jpg
     - assets/images/intro/intro2.jpg
     - assets/images/intro/intro3.png
+    - assets/images/intro/intro4.png
     - assets/images/logo.png
     - assets/images/android.png
     - assets/images/paperbackground.jpg
