@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import 'introductie.dart';
 import '../components/constants.dart';
 
@@ -37,6 +38,9 @@ class PairingPageState extends State<PairingPage> {
         showButton = true;
         displayText =
             'De twinkeltoorts is succesvol verbonden! Klik hieronder op start'; // Change text after delay
+
+        // Tril de telefoon voor 1 seconde
+        Vibration.vibrate(duration: 1000);
       });
     });
   }
@@ -113,7 +117,8 @@ class PairingPageState extends State<PairingPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const OnBoardingPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const OnBoardingPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
