@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:sprookjesverzamelaar/components/constants.dart';
+import 'package:sprookjesverzamelaar/screens/quiz.dart';
 import '../components/sprookjes.dart';
 
 class Verhaal extends StatefulWidget {
@@ -103,7 +104,7 @@ class _VerhaalState extends State<Verhaal> {
                     height: 20,
                   ),
                   FloatingActionButton(onPressed: (){
-                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> QuizVerhaal(selectedIndex: widget.selectedIndex)),);
                   },
                   child: Text('Quiz'),
                   backgroundColor: primary,
