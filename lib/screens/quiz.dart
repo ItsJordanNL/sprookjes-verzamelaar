@@ -1,12 +1,10 @@
 import "package:flutter/material.dart";
 import "package:sprookjesverzamelaar/components/constants.dart";
 import "package:sprookjesverzamelaar/screens/home.dart";
-import "package:sprookjesverzamelaar/screens/verhaal.dart";
-import "package:sprookjesverzamelaar/screens/verzameling.dart";
 import '../components/sprookjes.dart';
 
 class QuizVerhaal extends StatefulWidget {
-  QuizVerhaal({super.key, required this.selectedIndex});
+  const QuizVerhaal({super.key, required this.selectedIndex});
 
   final int selectedIndex;
 
