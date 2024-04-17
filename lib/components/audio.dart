@@ -23,6 +23,7 @@ class _AudioEffectsState extends State<AudioEffects> {
   WidgetsBinding.instance.addPostFrameCallback((_) async {
       await player.setSource(AssetSource('audio/backgroundmusic.mp3'));
       await player.setReleaseMode(ReleaseMode.loop);
+      await player.setVolume(0.2);
       await player.resume();
     });
 

@@ -35,7 +35,7 @@ class _VerhaalState extends State<Verhaal> {
   @override
   void initState() {
     super.initState();
-
+    
     audioPlayer = AudioPlayer(); // Initialisatie van de audioPlayer
 
     setAudio().then((_) {
