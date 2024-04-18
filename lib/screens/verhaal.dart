@@ -107,7 +107,7 @@ class _VerhaalState extends State<Verhaal> {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> QuizVerhaal(selectedIndex: widget.selectedIndex)),);
                   },
                   child: Text('Quiz'),
-                  backgroundColor: primary,
+                  backgroundColor: lightblue,
                   foregroundColor: textcolor,
                   ),
                 ],
@@ -134,11 +134,11 @@ class _VerhaalState extends State<Verhaal> {
       children: [
         SliderTheme(
           data: SliderTheme.of(context).copyWith(
-            activeTrackColor: primary,
+            activeTrackColor: lightblue,
             inactiveTrackColor: Colors.blue[100],
             trackShape: RoundedRectSliderTrackShape(),
             trackHeight: 4.0,
-            thumbColor: primary,
+            thumbColor: lightblue,
             thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
             overlayColor: Colors.blue.withAlpha(32),
             overlayShape: RoundSliderOverlayShape(overlayRadius: 28.0),
@@ -168,7 +168,7 @@ class _VerhaalState extends State<Verhaal> {
         ),
         CircleAvatar(
           radius: 25,
-          backgroundColor: primary,
+          backgroundColor: lightblue,
           child: IconButton(
             icon: Icon(
               isPlaying ? Icons.pause : Icons.play_arrow,

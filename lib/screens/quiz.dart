@@ -168,7 +168,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
           maxWidth: 350,
           maxHeight: 350), // Stel de maximale breedte in
       decoration: BoxDecoration(
-        color: Colors.white, // Stel de achtergrondkleur in op wit
+        color: Color.fromARGB(190, 255, 255, 255), // Stel de achtergrondkleur in op wit
         borderRadius: BorderRadius.circular(
             10), // Pas de gewenste waarde voor de afronding aan
       ),
@@ -198,7 +198,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const QuizAnswer(status: "correct"),
+            builder: (context) => const QuizAnswer(status: "Correct!"),
           ),
         );
       } else {
@@ -206,7 +206,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const QuizAnswer(status: "incorrect"),
+            builder: (context) => const QuizAnswer(status: "Incorrect!"),
           ),
         );
       }

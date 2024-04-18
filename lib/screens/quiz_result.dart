@@ -1,26 +1,84 @@
-import "package:flutter/material.dart";
-
+import 'package:flutter/material.dart';
+import 'package:sprookjesverzamelaar/components/constants.dart';
+import 'package:sprookjesverzamelaar/screens/verzameling.dart';
 
 class QuizAnswer extends StatefulWidget {
-  final String status; // Definieer het vereiste veld status
+  final String status;
 
-  const QuizAnswer({Key? key, required this.status})
-      : super(key: key); // Initialiseer het vereiste veld
+  const QuizAnswer({Key? key, required this.status}) : super(key: key);
 
   @override
   State<QuizAnswer> createState() => _QuizAnswerState();
 }
 
 class _QuizAnswerState extends State<QuizAnswer> {
+  String getFeedbackText() {
+    if (widget.status == "Correct!") {
+      return "Goed gedaan! Je hebt het juiste antwoord gekozen!";
+    } else {
+      return "Helaas.. je hebt niet het juiste antwoord gekozen.";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Text(widget
-                .status), // Gebruik widget.status om toegang te krijgen tot het statusveld
-          ],
+      backgroundColor: primary,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                widget.status,
+                style: const TextStyle(
+                  fontSize: 28,
+                  color: textcolor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                getFeedbackText(),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: textcolor,
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Container(
+                color: const Color.fromARGB(90, 33, 149, 243),
+                child: const Padding(
+                  padding:  EdgeInsets.all(12.0),
+                  child:  Text(
+                    '+100 Dukaten',
+                    style: TextStyle(color: textcolor),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const Verzameling()), // Verzameling is de naam van de bestemmingspagina
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: lightblue,
+                ),
+                child: const Text(
+                  'Terug naar verzameling',
+                  style: TextStyle(fontSize: 16, color: textcolor),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

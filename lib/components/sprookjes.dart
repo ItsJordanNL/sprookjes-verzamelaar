@@ -33,7 +33,7 @@ Op een dag kondigde de koning een groot bal aan. De prins zou een meisje kiezen 
 Zou de prins zijn Assepoester ooit nog terugvinden?''',
       audio: '',
       question: 'Hoeveel stiefzussen had Assepoester?',
-      answers: ['antwoord 500', 'antwoord 2', 'antwoord 3', 'antwoord 4' ],
+      answers: ['5', '2', '3', '4' ],
       correctAnswerIndex: 1,
     ));
 
@@ -194,7 +194,7 @@ Opeens kwam er een rode bloem uit de grond. Heel snel. De zwerver zei: “Ik ben
 
 // ================= 12 ====================== //
     sprookje.add(Sprookjes(
-      title: 'De wolf en dde zeven geitjes',
+      title: 'De wolf en de zeven geitjes',
       image: 'assets/images/sprookjes/sprookje12.jpg',
       story: '''De kleine geitjes weten heel goed dat ze binnen moeten blijven wanneer moeder geit de stad in gaat. Ze luisteren braaf, maar oh jee… De wolf is veel te slim. 
 

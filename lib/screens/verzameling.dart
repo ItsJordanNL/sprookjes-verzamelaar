@@ -33,18 +33,20 @@ class _VerzamelingState extends State<Verzameling> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:
-       Scaffold(
-        appBar: _appBar(),
-        body: Stack(
-          children: [
-            AudioEffects(),
-            _backgroundImage(),
-            _gridItems(context),
-            _collectionProgress(context, progress),
-            _collectionBadge(progress),
-          ],
-        ),
-      ),
+       SafeArea(
+         child: Scaffold(
+          appBar: _appBar(),
+          body: Stack(
+            children: [
+              AudioEffects(),
+              _backgroundImage(),
+              _gridItems(context),
+              _collectionProgress(context, progress),
+              _collectionBadge(progress),
+            ],
+          ),
+               ),
+       ),
     );
   }
 
