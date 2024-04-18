@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sprookjesverzamelaar/components/constants.dart';
+import 'package:sprookjesverzamelaar/screens/home.dart';
 import 'package:sprookjesverzamelaar/screens/verzameling.dart';
 
 class QuizAnswer extends StatefulWidget {
@@ -49,13 +51,16 @@ class _QuizAnswerState extends State<QuizAnswer> {
               const SizedBox(
                 height: 40,
               ),
-              Container(
-                color: const Color.fromARGB(90, 33, 149, 243),
-                child: const Padding(
-                  padding:  EdgeInsets.all(12.0),
-                  child:  Text(
-                    '+100 Dukaten',
-                    style: TextStyle(color: textcolor),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Container(
+                  color: const Color.fromARGB(90, 33, 149, 243),
+                  child: const Padding(
+                    padding:  EdgeInsets.all(12.0),
+                    child:  Text(
+                      '+100 Dukaten',
+                      style: TextStyle(color: textcolor),
+                    ),
                   ),
                 ),
               ),
@@ -66,7 +71,7 @@ class _QuizAnswerState extends State<QuizAnswer> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            const Verzameling()), // Verzameling is de naam van de bestemmingspagina
+                            const Home()), // Verzameling is de naam van de bestemmingspagina
                   );
                 },
                 style: ElevatedButton.styleFrom(
