@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:sprookjesverzamelaar/components/constants.dart";
 import "package:sprookjesverzamelaar/screens/home.dart";
+import "package:sprookjesverzamelaar/screens/quiz_result.dart";
 import '../components/sprookjes.dart';
 
 class QuizVerhaal extends StatefulWidget {
@@ -16,6 +17,8 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
   @override
   Widget build(BuildContext context) {
     final sprookje = Sprookjes.getSprookje()[widget.selectedIndex];
+
+
 
     return Scaffold(
       body: Container(
@@ -41,12 +44,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    // Plaats hier de navigatiecode naar de gewenste pagina
-                    // Bijvoorbeeld:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Home()),
-                    );
+                   _checkAnswer(0);
                   },
                   child: Container(
                     constraints: const BoxConstraints(
@@ -74,12 +72,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Plaats hier de navigatiecode naar de gewenste pagina
-                    // Bijvoorbeeld:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Home()),
-                    );
+                    _checkAnswer(1);
                   },
                   child: Container(
                     constraints: const BoxConstraints(
@@ -107,12 +100,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Plaats hier de navigatiecode naar de gewenste pagina
-                    // Bijvoorbeeld:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Home()),
-                    );
+                     _checkAnswer(0);
                   },
                   child: Container(
                     constraints: const BoxConstraints(
@@ -140,12 +128,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Plaats hier de navigatiecode naar de gewenste pagina
-                    // Bijvoorbeeld:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Home()),
-                    );
+                    _checkAnswer(0);
                   },
                   child: Container(
                     constraints: const BoxConstraints(
@@ -174,6 +157,8 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
               ],
             );
   }
+
+  
 
   Container _questionText(Sprookjes sprookje) {
     return Container(
@@ -204,7 +189,28 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
       ),
     );
   }
-}
+  
+     void _checkAnswer(int selectedAnswerIndex) {
+  final sprookje = Sprookjes.getSprookje()[widget.selectedIndex];
+      // Controleer of het geselecteerde antwoord overeenkomt met het juiste antwoord
+      if (sprookje.correctAnswerIndex == selectedAnswerIndex) {
+        // Als het antwoord correct is, navigeer naar een pagina met de melding "correct"
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const QuizAnswer(status: "correct"),
+          ),
+        );
+      } else {
+        // Als het antwoord onjuist is, navigeer naar een pagina met de melding "incorrect"
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const QuizAnswer(status: "incorrect"),
+          ),
+        );
+      }
+    }
 
 Padding _imageSection(Sprookjes sprookje) {
   return Padding(
@@ -219,4 +225,5 @@ Padding _imageSection(Sprookjes sprookje) {
       ),
     ),
   );
+}
 }

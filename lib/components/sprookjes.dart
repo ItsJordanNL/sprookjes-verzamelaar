@@ -5,6 +5,7 @@ class Sprookjes {
   String audio;
   String question;
   List<String> answers;
+  int correctAnswerIndex;
 
   Sprookjes({
     required this.title,
@@ -12,7 +13,8 @@ class Sprookjes {
     required this.image,
     required this.audio,
     required this.question,
-    required this.answers
+    required this.answers,
+    required this.correctAnswerIndex,
   });
 
   static List<Sprookjes> getSprookje() {
@@ -31,7 +33,8 @@ Op een dag kondigde de koning een groot bal aan. De prins zou een meisje kiezen 
 Zou de prins zijn Assepoester ooit nog terugvinden?''',
       audio: '',
       question: 'Hoeveel stiefzussen had Assepoester?',
-      answers: ['antwoord 500', 'antwoord 2', 'antwoord 3', 'antwoord 4' ]
+      answers: ['antwoord 500', 'antwoord 2', 'antwoord 3', 'antwoord 4' ],
+      correctAnswerIndex: 1,
     ));
 
 
@@ -46,7 +49,8 @@ Op een ochtend kreeg de Chinese keizer een brief van de keizer van Japan. De Jap
 Diezelfde dag nog werd de nachtegaal benoemd tot Hofkeizerlijke Nachtkastjeszanger en verbleef in het paleis en leefde in een gouden kooi. Hij miste zijn vrijheid wel, maar het geluk van de keizer was hem veel waard. Op een dag ontving de Chinese keizer een geschenk van de Japanse keizer. Hij kreeg een ander prachtig vogeltje. Geen echte maar een mechanische vogel. De Chinese keizer was erg blij mee. Dit vogeltje zong misschien nog wel mooier dan de echte. Steeds vaker speelde de keizer met de nepvogel. Dat deed de echte nachtegaal veel verdriet. Hij vloog weg, terug naar de mooie tuin en zijn vrijheid. Zou het vogeltje ooit nog terugkeren…?''',
       audio: '',
       question: 'Wat kon de nachtegaal?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 
@@ -62,7 +66,8 @@ Op een dag gebeurde er iets vreselijks. De kroon was weg! “Het was de heks”,
 In het land, vlakbij de grot, woonden ook een boerenzoon en dochter. De jongen was slim en dapper. Het meisje kon prachtig zingen. Wanneer ze zong leek iedereen wel betoverd en luisterde ademloos. Zouden zij het koninkrijk misschien nog kunnen redden…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 4 ====================== //
@@ -77,7 +82,8 @@ In het oerwoud woonde een heks, die zó lelijk was, dat ze alleen 's nachts uit 
 De heks probeerde al jaren met haar gezang de maanfee en de sterrenkinderen te betoveren. Nog nooit was het gelukt. Tot op een dag er zeven sterrenkinderen ontdeugend waren. “Kom sterrenkinderen, de nacht is om, kom, kom”, sprak de maanfee. Maar de kinderen luisterden niet. Ze dansten en dansten en zo kreeg de heks hen in haar macht. Arme kleine sterrenkinderen! Om middernacht mochten ze nog dansen, maar overdag waren ze veranderd in zeven waterlelies. Verlangend blikten ze naar boven. De blauwe hemel keek neer op de zeven ongelukkige sterrenkinderen. Zou de maanfee nog iets kunnen doen tegen de betovering…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 5 ====================== //
@@ -91,7 +97,8 @@ De prinses gooide de bal dan hoog in de lucht en ving hem weer op. Altijd. Tot o
 Toen ze de bal terug had, rende ze snel naar het paleis. Nog dezelfde avond werd er aan de paleisdeur geklopt. “Kwaak! Doe open… Ik ben het, de kikker!” De kikker kwam zijn beloning halen. Hij at mee aan de koninklijke tafel en dronk uit een koninklijk glas. Toen wilde de kikker nog een kus van de prinses. “Bah! Dat is toch vies!” Maar de prinses deed het toch en wat er toen gebeurde…''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 6 ====================== //
@@ -105,7 +112,8 @@ Het jongste prinsesje was het mooist en ze kon prachtig zingen. Zij droomde erva
 Op een nacht sloop ze stiekem naar de oude zeeheks. Deze zei: “Ik kan je mens maken, maar in ruil daarvoor wil ik je stem.” En zo geschiedde. De kleine zeemeermin kreeg benen en ontmoette opnieuw haar prins. Helaas kon ze hem niet vertellen hoeveel ze van hem hield. Op een dag zou de prins gaan trouwen. Groot was het verdriet van de zeemeermin. “Als ik niet met een prinses hoefde trouwen, trouwde ik met jou”, zei de prins’. De bruiloft werd gevierd op een groot schip. Toen de zeemeermin over de reling keek, zag ze haar zeemeermin zussen. “Wij hebben een dolk bij ons, van de heks, wanneer je daarmee de prins in het hart steekt krijg je je staart terug en kun je met ons mee.” Maar de liefde van de zeemeermin voor haar prins was te groot. Zouden ze ooit nog samen zijn…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 7 ====================== //
@@ -119,7 +127,8 @@ Op een dag bestelden ze bij een machtige tovenaar een klok met zes ridders te pa
 De prinsen waren blij en gingen snel met de knecht mee naar de toren van de tovenaar. Ze haalden alle onderdelen op, gingen weer terug naar het paleis, waar de knecht aan het werk ging om de klok in elkaar te zetten. Wat was hij mooi! Maar… de knecht was niet alleen gemeen, hij was ook dom. En tovenaars zijn slim. Hij zou vast een straf bedenken wanneer hij de diefstal ontdekte…''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 8 ====================== //
@@ -133,7 +142,8 @@ De hele dag stond hij voor de spiegel te bedenken wat hij nu weer aan zou doen. 
 Kom je snel kijken?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 9 ====================== //
@@ -147,7 +157,8 @@ Op een koude dag stond het meisje met haar rode schoentjes op het dorpsplein toe
 Op een dag werd de lieve dame ziek. Net op de dag dat er een groot feest zou zijn in het dorp. Het meisje had zich erg verheugd te kunnen dansen. Ze wachtte tot de zieke dame sliep en sloop toen op haar rode schoentjes het huis uit. Ze danste en danste, tot de klok twaalf uur sloeg. “Oh jee… Ik moet naar huis”, dacht het meisje. “De lieve oude dame is vast nog niet beter.” Maar hoe ze ook probeerde, het lukte niet. De schoentjes kleefden aan haar voeten en dansten en dansten… Het meisje danste het hele land door. Zouden de schoentjes de weg naar huis soms niet meer weten...?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 10 ====================== //
@@ -161,7 +172,8 @@ In het bos woonde ook een goede trol. Hij kon de toekomst voorspellen. Mensen en
 Voor zijn huis stond een trol met slecht nieuws “Kobald heeft prinses Adelheid gevangen genomen, wat moeten we doen?” “Ga prins Wikke halen en stuur hem naar het moeras van Kobald.” Toen de trol weg was, floot de goede trol een deuntje. Meteen kwam er een uil aan gevlogen en de goede trol fluisterde hem iets in zijn oor. Ondertussen ging prins Wikke op weg naar het moeras. Zou hij wel dapper genoeg zijn om Adelheid te redden…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 11 ====================== //
@@ -176,7 +188,8 @@ Voor zijn huis stond een trol met slecht nieuws “Kobald heeft prinses Adelheid
 Opeens kwam er een rode bloem uit de grond. Heel snel. De zwerver zei: “Ik ben een fakir. De sultan is zo ziek omdat hij te rijk is. Alleen als hij de schoonheid van één enkele bloem kan waarderen, wordt hij beter.” De tuinman zette de tulp naast het bed van de sultan. Hij knapte zienderogen op. De dokter gebood hem om alle ‘tulpendingesen’ die hij had te planten om de sultan te genezen. De volgende dag verscheen de sultan op zijn balkon. Beneden speelde de fakir op zijn fluit. Honderden rode bloemen staken hun kopjes uit de aarde. Het was een fantastisch gezicht, en tranen van geluk stroomden over de wangen van de sultan. Zou de sultan ooit weer helemaal beter worden?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 12 ====================== //
@@ -190,7 +203,8 @@ Of moeten we zeggen: gemeen?! Met een hoge stem en witte poot wordt hij geloofd.
 Hij vertelt haar alles over de wolf en zijn gemene streek. Moeder geit moet erg huilen, maar het kleine geitje voelt zich, met zijn mama in de buurt, heel dapper en verzint een plan. Zou hij daarmee zijn broertjes en zusjes nog kunnen redden…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 13 ====================== //
@@ -205,7 +219,8 @@ De heks kon dat niet uitstaan en sloot haar daarom op in een toren. Elke prins d
 De een was zo dik dat hij de hele wereld wel op kon eten. Een tweede kon alles van de hele wereld horen. De derde had benen, zó lang, hij kon in twintig stappen de hele wereld rond, de vierde had een scherp oog dat afgedekt was met een doekje. Wanneer het doekje afging, viel alles wat hij zag in duizend stukjes uiteen. De vijfde was een man die het altijd zo koud had dat geen vuur hem kon warmen. De zesde was een man met een lange nek, zodat hij de halve wereld kon zien. Al deze mannen werden de dienaren van de prins en samen gingen ze op weg naar de boze heks. Ook deze prins moest drie opdrachten voltooien. Wat denk je? Zou hij het redden met behulp van zijn bijzondere vrienden…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 14 ====================== //
@@ -220,7 +235,8 @@ Om de betovering te verbreken moest hun kleine zusje Elisa zes hemden van bos-as
 Zou het Elisa lukken om de betovering te verbreken?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 15 ====================== //
@@ -234,7 +250,8 @@ Op een mooie dag, toen alle rozen van het paleis bloeiden, ging de wens in vervu
 Op de dag van haar achttiende verjaardag zwierf de prinses rond in het paleis. In een ver kamertje, hoog in de toren vond zij een spinnewiel. Ze prikte zich... en viel in een diepe slaap. Als door een wonder viel iedereen in het paleis samen met haar in slaap en groeide er een dikke rozenhaag rond het kasteel. Alle mensen in het land vergaten het kasteel en de koninklijke familie. Tot op een dag - het was precies honderd jaar later - er een mooie prins voorbij de enorme rozenstruik kwam…''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 16 ====================== //
@@ -246,7 +263,8 @@ Op de dag van haar achttiende verjaardag zwierf de prinses rond in het paleis. I
 Als dank ontving hij van zijn leermeester een ezel. “Wanneer je zegt: 'Ezeltje strek je', zal de ezel zijn staart optillen en je gouden munten schenken”, sprak de meester. Ook deze zoon logeerde in de herberg. De waard had ontdekt hoe de jongen aan goudstukken kwam. 's Nachts wisselde hij de ezel stiekem om. De vader wist niet wat hij met zijn zoons moest. De een beweerde een betoverde tafel te hebben, de andere een betoverde ezel. Maar er gebeurde helemaal niets. Teleurgesteld schreef hij zijn jongste zoon een brief. Deze vertelde zijn leermeester wat zijn vader had geschreven. “Ik denk dat de waard jouw broers bestolen heeft. Hier, dit is mijn cadeau. Het is een zak met een knuppel erin. Zeg: 'Knuppel uit de zak' en de knuppel zal belagers een stevig pak rammel geven. Ga nu naar huis.” De jongen ging op weg. Onderweg stopte hij bij dezelfde herberg. Zou hij met zijn cadeau de waard een lesje kunnen leren…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 17 ====================== //
@@ -260,7 +278,8 @@ Op een dag was al het geld op. “Er is maar één oplossing”, zei de vrouw va
 Toen zagen ze tussen de bomen een huisje. Het dak was van krakelingen en speculaas, bezaaid met pindarotsjes, zuurtjes en toverballen. Wat lekker! Hans brak net een stuk speculaas van het huisje, toen er een stemmetje klonk: “Knibbel knabbel knuisje, wie knabbelt daar aan mijn huisje? Kom maar binnen, ik heb nog meer lekkers, hoor.” Ze gingen naar binnen, maar toen viel de deur met een klap achter hen in het slot. Ze waren in het huis van een gemene heks. “Hebbes, ik ga jou opeten”, zei ze tegen Hans. In de weken die volgden, zat Hans in een kooi en werd vetgemest door de heks. Op een dag vond ze dat het tijd was. “Steek de oven eens aan, meisje.” Grietje deed wat haar gevraagd werd, maar kreeg toen een ander plan… Zouden Hans en Grietje ooit nog thuiskomen?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 18 ====================== //
@@ -274,7 +293,8 @@ Vaak ging het paar uit wandelen en dan zei de prins: “Kijk, het geel van de bo
 Een wijze uil hoorde van het verhaal en zei tegen de vogels: “Jullie kennen de kleuren toch? Kunnen jullie niet iets terug doen voor de oude vrouw?” De volgende dag zat de oude weefster te treuren bij haar weefgetouw. “Wist ik nu maar wat groen was”, zuchtte ze en meteen voelde ze dat een snaveltje haar een streng zijde tussen de vingers duwde. “En nu het blauw van de lucht.” Samen met alle vogels werkte de vrouw aan het kleed en ze straalde van geluk. Toen de jurk klaar was, liet ze de prins komen. Ook hij was dolgelukkig. “Mijn bruid wordt de mooiste van het land.” En de vogeltjes? Die waren zo in de weer geweest met al de kleuren dat hun veertjes waren meegekleurd.''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 19 ====================== //
@@ -288,7 +308,8 @@ In een oude schort hield zij een heleboel zwavelstokken. Uit alle vensters straa
 Toen ging het zwavelstokje weer uit. Het meisje besefte dat ze gewoon op straat zat. Vol hoop streek ze nog een stokje af. Heel even had ze het weer warm. Ook dit keer zag ze de mooiste taferelen. Zo bleef ze stokjes afstrijken. Bij het laatste stokje verscheen als een wonder de grootmoeder van het meisje. Ze was gestorven, maar was altijd als enige goed voor het meisje geweest. De grootmoeder tilde het meisje op, nam haar in haar armen, en samen vlogen ze hoger en hoger… Waar vlogen die twee naartoe?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 20 ====================== //
@@ -302,7 +323,8 @@ Elke dag zei de koningin: “Dag mijn prinsesje, mijn dochtertje-klein. Voor eeu
 Onderweg kwam het prinsesje een oude vrouw tegen. “Dag meisje.” “Dag meisje.” Het prinsesje kon het niet laten de oude vrouw na te doen. Ze deed zelfs na hoe het kromme vrouwtje liep. “Wat ben jij een stout meisje. Je lijkt wel een papegaai!” De vrouw zwaaide met haar stok en sprak een vreemde toverspreuk uit. Flits! Het volgende moment was de prinses veranderd in een papegaai. Het oude vrouwtje was een heks. Het meisje vloog als papagaai naar het paleis terug waar iedereen al naar haar op zoek was. Natuurlijk herkende niemand het meisje nu ze veren en een snavel had. Gelukkig kon ze wel napraten, misschien kwam het dan toch nog goed…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 21 ====================== //
@@ -317,7 +339,8 @@ De hele familie was muzikaal, behalve de jongste dochter Estrella. Daarom gaven 
 Hij liep van deur tot deur, van dorp tot dorp. Op een goede dag bezocht de mandenmaker een kabouterdorpje waar hij de mooiste klanken hoorde. De kabouters gaven hem een gouden stemvork. Daarmee kon hij de jongste prinses betoveren. En zo geschiedde. Tijdens een feest aan het hof werd de jongste prinses betoverd. Zij kon daarna zó mooi en sierlijk dansen en zo zuiver zingen dat de tranen je over de wangen liepen. De mandenmaker werd beloond en benoemd tot minister van Vrolijke Zaken, en… Hij trouwde met Estrella.''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 22 ====================== //
@@ -331,7 +354,8 @@ Het gezin was erg arm. De ouders werden zo wanhopig dat ze besloten de kinderen 
 De volgende ochtend gingen de zeven broertjes er weer snel vandoor. Maar… De reus was ze op het spoor. Ze renden en renden, maar de reus was veel sneller. Hij had Zeven Mijls Laarzen waarmee hij enorme stappen kon nemen. “Snel, ik weet een grot waar we ons kunnen verstoppen”, zei Klein Duimpje. “Daar kan de reus ons vast niet vinden.” Moe van het zoeken viel de reus, vlakbij de verstopplaats, in een hele diepe slaap. Weer kreeg Klein Duimpje een plan. “Wat zou er gebeuren wanneer ik die Zeven Mijls Laarzen te pakken zou kunnen krijgen…?”''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 23 ====================== //
@@ -342,7 +366,8 @@ De volgende ochtend gingen de zeven broertjes er weer snel vandoor. Maar… De r
       story: '''Er was eens een prachtig land, vol dichte bossen met ontelbare bospaden. Je kon er gemakkelijk verdwalen. Daarom had de koning een boodschapper aangesteld die iedereen de weg wees: Kleine Boodschap. Op een dag deed Kleine Boodschap een dutje in het gras toen een merel de rode pluim van zijn muts pikte. En vanaf dat moment wist hij de weg niet meer. Wat naar, want nu verdwaalde iedereen! Juist die dag bracht de koning zijn trouwe boodschapper een pluim, voor bewezen diensten. Kleine Boodschap prikte hem op zijn muts en wat bleek? Plotseling wist hij de weg weer… en zo kwam alles toch nog goed!''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 24 ====================== //
@@ -356,7 +381,8 @@ De volgende ochtend gingen de zeven broertjes er weer snel vandoor. Maar… De r
 Onderweg haalden de sluwe vos en de domme kat Pinokkio over om mee te gaan op allerlei avonturen. Telkens als hij hierover loog tegen Geppetto, groeide zijn neus een paar centimeter. Op een kwade dag kwam Pinokkio niet thuis uit school en begon Geppetto wanhopig een zoektocht over land en zee... Waar is toch Pinokkio?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 25 ====================== //
@@ -370,7 +396,8 @@ Ze vroeg haar man er een paar te plukken in de tuin van de oude heks. De man dur
 Toen Raponsje was uitgegroeid tot een prachtige jongedame sloot de heks haar op in een toren. Wie weet zou er anders wel iemand met haar willen trouwen! Het mooiste aan Raponsje was haar lange, lange goudblonde vlecht. Wanneer de heks Raponsje in de toren eten ging brengen, zei ze: “Raponsje, hang je vlecht eens naar beneden.” Dan klom de heks langs de vlecht omhoog en bracht haar eten. Op een dag hoorde Raponsje weer: “Raponsje, hang je vlecht eens naar beneden.” Het was een prins, die stiekem de heks was gevolgd en alles had gezien. Hij werd meteen verliefd op Raponsje, maar wat zou de heks doen als zij daar achterkwam…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 26 ====================== //
@@ -384,7 +411,8 @@ Op een dag kwam de koning naar het dorp van de molenaar op zoek naar een vrouw. 
 Telkens spon het mannetje goud uit stro voor het meisje in ruil voor een sieraad. De derde dag waren de sieraden op. Het mannetje wilde nu in ruil voor zijn hulp een kindje. Maar het meisje had helemaal geen kindje. “Nee, zei het mannetje, het kindje dat je krijgt als je koningin bent.” Het meisje dacht helemaal nog niet aan kinderen en ze stemde toe. Dankzij de hulp van het mannetje werd het meisje koningin en… Kreeg een kindje. Op een slechte dag kwam het mannetje zijn beloning halen. Wat huilde de koningin. Ze kreeg nog één kans. “Als je binnen drie dagen mijn naam raadt,” zei het mannetje, “dan mag je het kindje houden.” Maar zou de koningin de naam wel weten…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 27 ====================== //
@@ -398,7 +426,8 @@ Aan de andere kant van het bos woonde de grootmoeder van Roodkapje. “Wil jij v
 Snel bedacht de wolf een list. “Zou je niet wat bloemen plukken voor je oma, dat vindt ze vast heel leuk.” Roodkapje deed wat de wolf had gezegd. Ondertussen spoedde de wolf zich naar het huisje van grootmoeder. “Wie is daar.” “Ik ben het Roodkapje”, zei de sluwe wolf. “Kom dan maar binnen”, zei grootmoeder. Dat had ze beter niet kunnen doen. Met een grote hap at de wolf haar op. Daarna ging hij in bed liggen en wachtte op Roodkapje…''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 28 ====================== //
@@ -420,7 +449,8 @@ Toen de boze koningin ontdekte dat Sneeuwwitje nog leefde vermomde ze zich als a
 Totdat een jonge prins voorbij reed….''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 29 ====================== //
@@ -430,7 +460,8 @@ Totdat een jonge prins voorbij reed….''',
       story: '''In het Sprookjesbos leeft iedereen altijd lang en gelukkig, maar er gebeuren ook wel eens spannende dingen. Sprookjesboom krijgt altijd alles mee en staat te popelen om de mooiste verhalen uit het Sprookjesbos met jou te delen! Strijk snel neer op één van de bankjes en doe samen met Specht, Konijn en Eekhoorn mee met de interactieve sprookjes!''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
 // ================= 30 ====================== //
@@ -444,7 +475,8 @@ Op een middag zat Rita stilletjes bij de put te huilen. Ze werkte aan een spinne
 Toen kwam ze bij een huisje. “Dag, ik ben Vrouw Holle, wil jij niet een poosje bij mij blijven. Ik kan wel een goede hulp gebruiken.” Rita besloot de vrouw ook te helpen. “Elke dag moet je mijn bed goed uitkloppen. Zo hard, dat de veren in het rond vliegen. Als dat gebeurt, dan sneeuwt het ergens op aarde.” Na een poosje kreeg Rita heimwee en ging weer naar huis. Als beloning voor haar goede zorgen en hulp werd ze overladen met goud. Haar moeder was erg blij dat Rita weer thuis was, maar haar luie zus was jaloers. De volgende dag besloot Mina dat ze ook wel eens in die put kon springen. Wat een makkelijke manier om aan goud te komen! Maar zou een lui meisje als zij wel dezelfde beloning krijgen van Vrouw Holle…?''',
       audio: '',
       question: 'Hoe lang sliep doornroosje?',
-      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4']
+      answers: ['antwoord 1', 'antwoord 2', 'antwoord 3', 'antwoord 4'],
+      correctAnswerIndex: 1,
     ));
 
     return sprookje;
