@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:sprookjesverzamelaar/components/constants.dart";
-import "package:sprookjesverzamelaar/screens/home.dart";
 import "package:sprookjesverzamelaar/screens/quiz_result.dart";
 import '../components/sprookjes.dart';
 
@@ -168,7 +167,7 @@ class _QuizVerhaalState extends State<QuizVerhaal> {
           maxWidth: 350,
           maxHeight: 350), // Stel de maximale breedte in
       decoration: BoxDecoration(
-        color: Color.fromARGB(190, 255, 255, 255), // Stel de achtergrondkleur in op wit
+        color: const Color.fromARGB(190, 255, 255, 255), // Stel de achtergrondkleur in op wit
         borderRadius: BorderRadius.circular(
             10), // Pas de gewenste waarde voor de afronding aan
       ),

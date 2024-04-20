@@ -7,13 +7,13 @@ void main() {
 }
 
 class TestNFC extends StatefulWidget {
-  const TestNFC({Key? key}) : super(key: key);
+  const TestNFC({superkey});
 
   @override
-  _TestNFCState createState() => _TestNFCState();
+  TestNFCState createState() => TestNFCState();
 }
 
-class _TestNFCState extends State<TestNFC> {
+class TestNFCState extends State<TestNFC> {
   late bool isNfcAvailable;
 
   @override

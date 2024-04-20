@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sprookjesverzamelaar/components/constants.dart';
 import 'package:sprookjesverzamelaar/screens/home.dart';
-import 'package:sprookjesverzamelaar/screens/verzameling.dart';
 
 class QuizAnswer extends StatefulWidget {
   final String status;
 
-  const QuizAnswer({Key? key, required this.status}) : super(key: key);
+  const QuizAnswer({super.key, required this.status});
 
   @override
   State<QuizAnswer> createState() => _QuizAnswerState();
